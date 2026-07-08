@@ -1,0 +1,78 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, sans-serif;
+  background: #1e1e1e; color: #d4d4d4; height: 100vh;
+  display: flex; flex-direction: column;
+}
+header {
+  background: #252526; padding: 10px 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid #3c3c3c;
+}
+header h1 { font-size: 18px; color: #ff9500; }
+.toolbar button {
+  background: #0e639c; color: white; border: none;
+  padding: 6px 12px; margin-left: 6px; border-radius: 4px; cursor: pointer;
+}
+.container { flex: 1; display: flex; }
+.panel { flex: 1; display: flex; flex-direction: column; border-right: 1px solid #3c3c3c; }
+.panel:last-child { border-right: none; }
+.panel-header {
+  background: #2d2d30; padding: 8px 16px;
+  font-size: 13px; color: #888; text-transform: uppercase;
+}
+textarea {
+  flex: 1; width: 100%; background: #1e1e1e; color: #d4d4d4;
+  border: none; padding: 16px; font-family: monospace;
+  font-size: 14px; resize: none; outline: none;
+}
+.preview { flex: 1; padding: 20px; overflow-y: auto; line-height: 1.6; }
+.preview h1, .preview h2 { color: #ff9500; }
+.preview code { background: #2d2d30; padding: 2px 6px; border-radius: 3px; }
+.preview pre { background: #2d2d30; padding: 12px; border-radius: 4px; overflow-x: auto; }
+.preview blockquote { border-left: 3px solid #ff9500; padding-left: 12px; color: #999; }
+.preview table { border-collapse: collapse; margin: 12px 0; }
+.preview th, .preview td { border: 1px solid #3c3c3c; padding: 6px 12px; }
+
+
+  /* Стили специально для PDF */
+  .pdf-content {
+    background: white !important;
+    color: black !important;
+    padding: 20px;
+  }
+  .pdf-content h1, .pdf-content h2, .pdf-content h3 {
+    color: #2c3e50 !important;
+    page-break-after: avoid;
+  }
+  .pdf-content pre, .pdf-content code {
+    background: #f4f4f4 !important;
+    color: #333 !important;
+    border: 1px solid #ddd;
+  }
+  .pdf-content blockquote {
+    border-left-color: #3498db !important;
+    color: #555 !important;
+  }
+  .pdf-content a {
+    color: #2980b9 !important;
+    text-decoration: underline;
+  }
+  .pdf-content table {
+    border: 1px solid #ddd !important;
+  }
+  .pdf-content th, .pdf-content td {
+    border: 1px solid #ddd !important;
+  }
+  .pdf-content img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+  
+  /* Управление разрывами страниц */
+  .page-break-before { page-break-before: always; }
+  .page-break-after { page-break-after: always; }
+  .page-break-avoid { page-break-inside: avoid; }
+  
+  /* Скрываем элементы в PDF */
+  .no-print { display: none !important; }
